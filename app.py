@@ -101,7 +101,7 @@ def sign_pdf():
         input_stream = BytesIO(input_pdf_bytes)
         output_stream = BytesIO()
 
-        writer = IncrementalPdfFileWriter(input_stream)
+        writer = IncrementalPdfFileWriter(input_stream, strict=False)
 
         signature_meta = signers.PdfSignatureMetadata(
             field_name="Signature1",
